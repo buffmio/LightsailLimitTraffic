@@ -2,7 +2,7 @@
 #coding=utf-8
 import sys,re,time,os
 maxdata = 536870912000 #流量上限，包括流入和流出，单位Byte
-memfilename = '/root/newnetcardtransdata.txt'
+memfilename = '/opt/newnetcardtransdata.txt'
 netcard = '/proc/net/dev'
 def checkfile(filename):
     if os.path.isfile(filename):
@@ -54,6 +54,6 @@ def net_loop():
         memw.write(str(totaltrans))
         memw.close()
         if totaltrans >= maxdata:
-            os.system('rm -f /root/newnetcardtransdata.txt && init 0') #可以修改为其他命令
+            os.system('rm -f /opt/newnetcardtransdata.txt && init 0') #可以修改为其他命令
 if __name__ == "__main__":
     net_loop()
