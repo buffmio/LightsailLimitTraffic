@@ -1,7 +1,7 @@
 #!/usr/bin/python
 #coding=utf-8
 import sys,re,time,os
-maxdata = 1099511627776 #流量上限，包括流入和流出，单位Byte
+maxdata = 33554432000 #流量上限，包括流入和流出，单位Byte
 memfilename = '/opt/newnetcardtransdata.txt'
 netcard = '/proc/net/dev'
 def checkfile(filename):
